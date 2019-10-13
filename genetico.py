@@ -2,8 +2,8 @@ from random import randrange, choice, random
 import numpy as np
 
 peso = 30 # peso del carro
-numPoblacion = 15 # numero de vecinos
-numHijos = 1 # 1 = 2 padres o num hijos
+numPoblacion = 15 # numero de población
+numHijos = 2 # 1 = 2 padres o num hijos
 tamanoCampeonato = 2 # tamaño del campeonato
 pMutacion = 0.15 # probabilidad de mutación
 generacionesMaxima = 300 # generaciones máxima
@@ -116,12 +116,13 @@ def main():
             if(numberRandom < pMutacion):
                 hijos[k] = mutar(hijos[k])
         # reemplazo (reemplazo los peores)
-        poblacion.pop(numHijos)
+        poblacion = poblacion[:len(poblacion) - numHijos]
         poblacion = poblacion[:] + hijos[:]
         poblacion.sort(reverse = True, key = valor)
         print("Generación n.", i,": ", poblacion)
         if(np.array_equal(poblacion, poblacionAnt)):
             break 
+        print(len(poblacion))
         poblacionAnt = poblacion
     print("Resultado: ", poblacion[0])
 
