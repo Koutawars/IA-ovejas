@@ -22,7 +22,7 @@ def medirPeso(a):
         result += Mapa[x][0]
     return result
 
-def conseguirVecino(mapa, num, current):
+def conseguirVecino(mapa, num):
     vecinos = [] 
     i = 0
     while True:
@@ -45,8 +45,8 @@ def conseguirVecino(mapa, num, current):
     return vecinos
 
 def hillClimbing(mapa, numVecinos):
-    current = conseguirVecino(mapa, 1, None)[0]
-    vecinos = conseguirVecino(mapa, numVecinos, current)
+    current = conseguirVecino(mapa, 1)[0]
+    vecinos = conseguirVecino(mapa, numVecinos)
     t=tm.time()
     while True:
         print("Ahora: ", current)
@@ -58,7 +58,7 @@ def hillClimbing(mapa, numVecinos):
             print("---------Time: %02.03f ----------" % (tm.time()-t))
             return current
         current = vecinos[0]
-        vecinos = conseguirVecino(mapa, numVecinos, current)
+        vecinos = conseguirVecino(mapa, numVecinos)
 
 def valor(vec):
     suma = 0
