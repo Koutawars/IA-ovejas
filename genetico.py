@@ -125,7 +125,7 @@ def main():
         poblacion = poblacion[:len(poblacion) - numHijos]
         poblacion = poblacion[:] + hijos[:]
         poblacion.sort(reverse = True, key = valor)
-        #print("Generación n.", i,": ", poblacion)
+        print("Generación n.", i,": ", poblacion)
         if(np.array_equal(poblacion, poblacionAnt)):
             break 
         poblacionAnt = poblacion
