@@ -1,7 +1,7 @@
 from random import randrange, choice, random
 import numpy as np
 
-peso = 30 # peso del carro
+peso = 20 # peso del carro
 numPoblacion = 15 # numero de población
 numHijos = 2 # 1 = 2 padres o num hijos
 tamanoCampeonato = 2 # tamaño del campeonato
@@ -122,7 +122,6 @@ def main():
         print("Generación n.", i,": ", poblacion)
         if(np.array_equal(poblacion, poblacionAnt)):
             break 
-        print(len(poblacion))
         poblacionAnt = poblacion
     print("Resultado: ", poblacion[0])
 
