@@ -8,11 +8,10 @@ tamanoCampeonato = 2 # tamaño del campeonato
 pMutacion = 0.15 # probabilidad de mutación
 generacionesMaxima = 300 # generaciones máxima
 
-
 # mapa de ovejas
 # ID: (PESO, VALOR)
 Mapa = {
-    1: (15, 100),
+    1: (10, 100),
     2: (8, 95),
     3: (9, 80),
     4: (10, 80),
