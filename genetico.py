@@ -12,7 +12,7 @@ generacionesMaxima = 300 # generaciones máxima
 # mapa de ovejas
 # ID: (PESO, VALOR)
 Mapa = {
-    1: (10, 100),
+    1: (15, 100),
     2: (8, 95),
     3: (9, 80),
     4: (10, 80),
@@ -53,7 +53,13 @@ def mutar(hijo):
     indice = randrange(len(hijo))
     ovejas = set(Mapa.keys())
     ovejas = list(ovejas - set(hijo))
-    hijo[indice] = choice(ovejas)
+    while True:
+        hijo[indice] = choice(ovejas)
+        if(medirPeso(hijo) <= peso): 
+            break
+        ovejas.remove(hijo[indice]) 
+        if(len(ovejas) == 0):
+            break
     return hijo
 
 # conseguir población N
@@ -119,14 +125,11 @@ def main():
         poblacion = poblacion[:len(poblacion) - numHijos]
         poblacion = poblacion[:] + hijos[:]
         poblacion.sort(reverse = True, key = valor)
-        print("Generación n.", i,": ", poblacion)
+        #print("Generación n.", i,": ", poblacion)
         if(np.array_equal(poblacion, poblacionAnt)):
             break 
         poblacionAnt = poblacion
     print("Resultado: ", poblacion[0])
-
-
-
 
 if __name__ == "__main__":
     main()
