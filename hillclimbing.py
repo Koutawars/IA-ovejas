@@ -22,7 +22,7 @@ def medirPeso(a):
         result += Mapa[x][0]
     return result
 
-def conseguirVecino(mapa, num, current):
+def conseguirVecino(mapa, num):
     vecinos = [] 
     i = 0
     while True:
