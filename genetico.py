@@ -2,7 +2,7 @@ from random import randrange, choice, random
 import numpy as np
 
 peso = 20 # peso del carro
-numPoblacion = 15 # numero de población
+numPoblacion = 10 # numero de población
 numHijos = 2 # 1 = 2 padres o num hijos
 tamanoCampeonato = 2 # tamaño del campeonato
 pMutacion = 0.15 # probabilidad de mutación
