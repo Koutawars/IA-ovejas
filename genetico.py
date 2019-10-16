@@ -1,5 +1,6 @@
 from random import randrange, choice, random
 import numpy as np
+import cargarArchivo as ca
 
 peso = 20 # peso del carro
 numPoblacion = 10 # numero de población
@@ -10,6 +11,7 @@ generacionesMaxima = 300 # generaciones máxima
 
 # mapa de ovejas
 # ID: (PESO, VALOR)
+'''
 Mapa = {
     1: (10, 100),
     2: (8, 95),
@@ -18,6 +20,8 @@ Mapa = {
     5: (9, 70),
     6: (8, 90)
 }
+'''
+Mapa = ca.cargar()
 
 def medirPeso(a):
     result = 0

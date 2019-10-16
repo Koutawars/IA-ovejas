@@ -2,6 +2,7 @@ from random import randrange, choice
 import time as tm
 import math
 import random
+import cargarArchivo as ca
 
 def conseguirVecino():
     aux = list(Mapa.keys())
@@ -34,6 +35,7 @@ v = 1 # numero de vecinos
 
 # mapa de ovejas
 # ID: (PESO, VALOR)
+'''
 Mapa = {
     1: (10, 100),
     2: (8, 95),
@@ -42,6 +44,8 @@ Mapa = {
     5: (9, 70),
     6: (8, 90)
 }
+'''
+Mapa = ca.cargar()
 
 
 # Numero de ciclos

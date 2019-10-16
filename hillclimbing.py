@@ -1,12 +1,14 @@
 from random import randrange, choice
 import time as tm
 import math
+import cargarArchivo as ca
 
-peso = 20 # peso del carro
+peso = 30 # peso del carro
 v = 1 # numero de vecinos
 
 # mapa de ovejas
 # ID: (PESO, VALOR)
+'''
 Mapa = {
     1: (10, 100),
     2: (8, 95),
@@ -15,6 +17,8 @@ Mapa = {
     5: (9, 70),
     6: (8, 90)
 }
+'''
+Mapa = ca.cargar()
 
 def medirPeso(a):
     result = 0
