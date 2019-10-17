@@ -5,7 +5,7 @@ def cargar():
     for fila in filas:
         ptr = fila.split()
         id = int(ptr[0])
-        peso = int(ptr[1])
-        valor = int(ptr[2])
+        peso = float(ptr[1])
+        valor = float(ptr[2])
         map[id] = (peso, valor)
     return map
