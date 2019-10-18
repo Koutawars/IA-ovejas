@@ -3,6 +3,7 @@ import time as tm
 import math
 import random
 import cargarArchivo as ca
+import time as tm
 
 def conseguirVecino():
     aux = list(Mapa.keys())
@@ -30,8 +31,8 @@ def valor(vec):
         suma += Mapa[x][1]
     return suma
 
-peso = 20 # peso del carro
-v = 1 # numero de vecinos
+peso = 12000 # peso del carro
+v = 20 # numero de vecinos
 
 # mapa de ovejas
 # ID: (PESO, VALOR)
@@ -71,10 +72,13 @@ na = 1.0
 fc = valor(conseguirVecino())
 DeltaE_avg = 0.0
 j = 0
+numBucles = 0
+tiempo=tm.time()
 for i in range(n):
     print('Cycle: ' + str(i) + ' with Temperature: ' + str(t))
     for j in range(m):
         vecino = conseguirVecino()
+        numBucles -= -1
         DeltaE = abs(valor(vecino) - fc)
         
         if (valor(vecino) < fc):
@@ -92,4 +96,5 @@ for i in range(n):
             na = na + 1.0
             DeltaE_avg = (DeltaE_avg * (na-1.0) +  DeltaE) / na
     t = frac * t
-print("Solución: ", current, " -> valor = ", valor(current))
+print("Solución: ", current, " -> valor = ", valor(current), " bucles = ", numBucles)
+print("---------Time: %02.03f ----------" % (tm.time()-tiempo))

@@ -1,11 +1,12 @@
 from random import randrange, choice, random
 import numpy as np
 import cargarArchivo as ca
+import time as tm
 
-peso = 20 # peso del carro
-numPoblacion = 10 # numero de población
-numHijos = 2 # 1 = 2 padres o num hijos
-tamanoCampeonato = 2 # tamaño del campeonato
+peso = 12000 # peso del carro
+numPoblacion = 100 # numero de población
+numHijos = 5 # 1 = 2 padres o num hijos
+tamanoCampeonato = 4 # tamaño del campeonato
 pMutacion = 0.15 # probabilidad de mutación
 generacionesMaxima = 300 # generaciones máxima
 
@@ -88,6 +89,8 @@ def conseguirPoblacion(num):
     return vecinos
 
 def main():
+    # tiempo
+    t=tm.time()
     # generación de población inicial
     poblacion = conseguirPoblacion(numPoblacion)
     poblacionAnt = poblacion
@@ -128,11 +131,12 @@ def main():
         poblacion = poblacion[:len(poblacion) - numHijos]
         poblacion = poblacion[:] + hijos[:]
         poblacion.sort(reverse = True, key = valor)
-        print("Generación n.", i,": ", poblacion)
+        print("Generación n.", i)
         if(np.array_equal(poblacion, poblacionAnt)):
             break 
         poblacionAnt = poblacion
     print("Resultado: ", poblacion[0], " -> valor = ", valor(poblacion[0]))
+    print("---------Time: %02.03f ----------" % (tm.time()-t))
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 def cargar():
     map = {}
-    archivo = open('ovejas.txt','r')
+    archivo = open('sheep_list_range2_1000_arc4b.txt','r')
     filas = archivo.readlines()
     for fila in filas:
         ptr = fila.split()
