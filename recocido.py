@@ -92,4 +92,4 @@ for i in range(n):
             na = na + 1.0
             DeltaE_avg = (DeltaE_avg * (na-1.0) +  DeltaE) / na
     t = frac * t
-print("Solución: ", current)
+print("Solución: ", current, " -> valor = ", valor(current))

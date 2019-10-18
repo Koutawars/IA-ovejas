@@ -132,7 +132,7 @@ def main():
         if(np.array_equal(poblacion, poblacionAnt)):
             break 
         poblacionAnt = poblacion
-    print("Resultado: ", poblacion[0])
+    print("Resultado: ", poblacion[0], " -> valor = ", valor(poblacion[0]))
 
 if __name__ == "__main__":
     main()
